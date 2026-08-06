@@ -7,11 +7,14 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
     />
-    <title>{% block title %}Trail Guide{% endblock %}</title>
+    <title>{% block title %}{{ title }}{% endblock %}</title>
   </head>
   <body>
     <header></header>
-    <main>{% block content %}{% endblock %}</main>
+    <main>
+      {% block content %}
+      {% endblock %}
+    </main>
     <footer></footer>
   </body>
 </html>
