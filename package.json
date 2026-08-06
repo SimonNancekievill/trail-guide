@@ -4,9 +4,21 @@
   "type": "module",
   "private": true,
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "tsx": "^4.23.9"
   },
   "peerDependencies": {
-    "typescript": "^5"
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "@types/express": "^5.0.6",
+    "@types/nunjucks": "^3.2.6",
+    "@types/sanitize-html": "^2.16.1",
+    "@types/sqlite3": "^5.1.0",
+    "express": "^5.2.1",
+    "nunjucks": "^3.2.4",
+    "sanitize-html": "^2.17.6",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^6.0.1"
   }
 }
