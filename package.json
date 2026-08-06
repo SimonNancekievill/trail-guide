@@ -9,6 +9,8 @@
   },
   "devDependencies": {
     "@types/bun": "latest",
+    "prettier": "^3.9.6",
+    "prettier-plugin-jinja-template": "^2.2.0",
     "tsx": "^4.23.9"
   },
   "peerDependencies": {
