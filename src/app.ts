@@ -22,22 +22,6 @@ try {
   process.exit(1);
 }
 
-// app.get("/api/dbstructure", async (_req, res) => {
-//   const db = await connectDB();
-//   try {
-//     const tables = await db.all(`
-//       SELECT name, sql
-//       FROM sqlite_master
-//       WHERE type = 'table'
-//       ORDER BY name;
-//     `);
-
-//     res.json(tables);
-//   } catch (err) {
-//     console.error(err);
-//     res.status(500).send("Could not read database structure");
-//   }
-// });
 app.listen(port, () => {
   console.log(`Server is runnung at http://localhost:${port}`);
 });

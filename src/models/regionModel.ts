@@ -1,5 +1,4 @@
 import { getDB } from "./db";
-import type { Request, Response } from "express";
 
 export type Region = {
   id: number;

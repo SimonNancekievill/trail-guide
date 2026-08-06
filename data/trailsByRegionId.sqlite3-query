@@ -1,0 +1,3 @@
+-- database: ./trail-guide.db
+
+SELECT trails.*, regions.name AS region_name, regions.country AS region_country FROM trails INNER JOIN regions ON trails.region_id = regions.id WHERE trails.region_id = 2;
