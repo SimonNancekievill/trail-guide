@@ -3,16 +3,17 @@ import nunjucks from "nunjucks";
 import { connectDB, closeDB } from "./models/db";
 import APIRouter from "./routes/APIRoutes";
 import router from "./routes/websiteRoutes";
+import { logger } from "./middleware/logger";
 
 const app = express();
 const port = process.env.PORT;
+app.use(logger);
 
 nunjucks.configure("views", {
   autoescape: true,
   express: app,
 });
 app.set("view engine", "njk");
-
 try {
   await connectDB();
   console.log("Database successfully connected");

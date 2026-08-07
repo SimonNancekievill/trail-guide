@@ -9,7 +9,7 @@ export type Trail = {
   description: string;
   image_url: string;
   region_id: number;
-  createdAt: number;
+  created_at: number;
 };
 export type TrailWithRegion = Trail & {
   region_name: string;

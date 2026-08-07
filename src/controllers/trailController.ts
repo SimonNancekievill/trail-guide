@@ -1,5 +1,6 @@
 import type { Request, Response } from "express";
 import { getAllTrails, getTrailBySlug } from "../models/trailsModel";
+import { formatDate } from "../utils/formatDate";
 
 export async function listTrails(req: Request, res: Response) {
   const trails = await getAllTrails();
@@ -15,7 +16,8 @@ export async function showTrail(req: Request<{ slug: string }>, res: Response) {
       res.status(404).send("Trail is not found");
       return;
     }
-    res.render("trail.njk", { title: trail.title, trail });
+    const formattedDate = formatDate(trail.created_at);
+    res.render("trail.njk", { title: trail.title, trail, formattedDate });
   } catch (error) {
     if (error instanceof Error) {
       res.status(404).send(`Error:  ${error.message}`);

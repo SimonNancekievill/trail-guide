@@ -11,6 +11,7 @@
         <article>
           <p><strong>{{ region.name }}</strong></p>
           <p><small>{{ region.description }}</small></p>
+          <a href="/regions/{{ region.slug }}" role="button">View region</a>
         </article>
       </li>
     {% endfor %}
