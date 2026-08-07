@@ -1,0 +1,18 @@
+{% extends "index.njk" %}
+
+{% block header %}
+  <h1>Browse Regions</h1>
+{% endblock header %}
+
+{% block content %}
+  <ul style="list-style: none;" class="container">
+    {% for region in regions %}
+      <li style="list-style: none;">
+        <article>
+          <p><strong>{{ region.name }}</strong></p>
+          <p><small>{{ region.description }}</small></p>
+        </article>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock content %}

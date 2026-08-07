@@ -5,14 +5,14 @@
 {% endblock header %}
 
 {% block content %}
-  <article>
-    <ul>
-      {% for trail in trails %}
-        <li>
-          <h2>{{ trail.title }}</h2>
-          <p>{{ trail.difficulty }}</p>
-        </li>
-      {% endfor %}
-    </ul>
-  </article>
+  <ul class="container" style="list-style: none;">
+    {% for trail in trails %}
+      <li style="list-style: none;">
+        <article>
+          <p><strong>{{ trail.title }}</strong></p>
+          <p><small>{{ trail.difficulty }}</small></p>
+        </article>
+      </li>
+    {% endfor %}
+  </ul>
 {% endblock content %}

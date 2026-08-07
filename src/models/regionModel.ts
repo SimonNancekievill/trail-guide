@@ -11,7 +11,6 @@ export type Region = {
 export async function getAllRegions(): Promise<Region[]> {
   const db = getDB();
   const regions = await db.all<Region[]>("SELECT * FROM regions");
-  console.log("Retrieved trails from database", regions);
   return regions;
 }
 

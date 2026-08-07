@@ -1,0 +1,14 @@
+{% extends "_base.njk" %}
+
+{% block content %}
+  <article class="container">
+    <h2>{{ trail.title }}</h2>
+    <p>{{ trail.description }}</p>
+    <p>
+      <small>Distance in km:</small> <strong>{{ trail.distance_km }}</strong>
+    </p>
+    <p><small>Difficulty:</small> <strong>{{ trail.difficulty }}</strong></p>
+    <p><small>Region:</small> <strong>{{ trail.region_name }}</strong></p>
+    <p><small>Country:</small> <strong>{{ trail.region_country }}</strong></p>
+  </article>
+{% endblock content %}

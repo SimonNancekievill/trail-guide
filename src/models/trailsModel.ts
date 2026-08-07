@@ -29,7 +29,7 @@ export async function getTrailBySlug(
 ): Promise<TrailWithRegion | undefined> {
   const db = getDB();
   const trail = await db.get<TrailWithRegion>(
-    "SELECT trails.*, regions.name AS region_name, regions.country AS region_country FROM trails INNER JOIN regions ON trails.region_id = regions.id WHERE slug = ?",
+    "SELECT trails.*, regions.name AS region_name, regions.country AS region_country FROM trails INNER JOIN regions ON trails.region_id = regions.id WHERE trails.slug = ?",
     slug,
   );
 
