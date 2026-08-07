@@ -1,18 +1,12 @@
 {% extends "_base.njk" %}
+{% from "macros/trailCard.njk" import trailCard %}
 
 {% block header %}
   <h1>Browse Trails</h1>
 {% endblock header %}
 
 {% block content %}
-  <ul class="container" style="list-style: none;">
-    {% for trail in trails %}
-      <li style="list-style: none;">
-        <article>
-          <p><strong>{{ trail.title }}</strong></p>
-          <p><small>{{ trail.difficulty }}</small></p>
-        </article>
-      </li>
-    {% endfor %}
-  </ul>
+  {% for trail in trails %}
+    {{ trailCard(trail) }}
+  {% endfor %}
 {% endblock content %}

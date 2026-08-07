@@ -12,7 +12,7 @@ export async function showTrail(req: Request<{ slug: string }>, res: Response) {
     const { slug } = req.params;
     const trail = await getTrailBySlug(slug!);
     if (!trail) {
-      res.status(400).send("Trail is not found");
+      res.status(404).send("Trail is not found");
       return;
     }
     res.render("trail.njk", { title: trail.title, trail });

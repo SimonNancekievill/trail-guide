@@ -1,0 +1,14 @@
+{% extends "_base.njk" %}
+{% from "macros/trailCard.njk" import trailCard %}
+
+{% block content %}
+  <article>
+    <h1>{{ region.name }}</h1>
+    <p>{{ region.country }}</p>
+    <p>{{ region.description }}</p>
+
+    {% for trail in trails %}
+      {{ trailCard(trail) }}
+    {% endfor %}
+  </article>
+{% endblock content %}
