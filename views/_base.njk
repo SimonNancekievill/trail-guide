@@ -7,20 +7,20 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
     />
-    <title>{% block title %}{{ title }}{% endblock %}</title>
+    <title>{% block title %}{{ title }}{% endblock title %}</title>
   </head>
   <body>
-    <header>
+    <header class="container">
       {% block header %}
-      {% endblock %}
+      {% endblock header %}
     </header>
-    <main>
+    <main class="container">
       {% block content %}
-      {% endblock %}
+      {% endblock content %}
     </main>
     <footer>
       {% block footer %}
-      {% endblock %}
+      {% endblock footer %}
     </footer>
   </body>
 </html>

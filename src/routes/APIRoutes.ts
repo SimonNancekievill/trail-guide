@@ -2,9 +2,9 @@ import express from "express";
 import { getAllTrails } from "../models/trailsModel";
 import { getAllRegions } from "../models/regionModel";
 
-const router = express.Router();
+const APIRouter = express.Router();
 
-router.get("/trails", getAllTrails);
-router.get("/regions", getAllRegions);
+APIRouter.get("/trails", getAllTrails);
+APIRouter.get("/regions", getAllRegions);
 
-export default router;
+export default APIRouter;

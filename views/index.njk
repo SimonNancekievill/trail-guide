@@ -1,0 +1,18 @@
+{% extends "_base.njk" %}
+
+{% block header %}
+  <h1>Browse Trails</h1>
+{% endblock header %}
+
+{% block content %}
+  <article>
+    <ul>
+      {% for trail in trails %}
+        <li>
+          <h2>{{ trail.title }}</h2>
+          <p>{{ trail.difficulty }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  </article>
+{% endblock content %}

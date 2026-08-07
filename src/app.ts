@@ -1,7 +1,8 @@
 import express from "express";
 import nunjucks from "nunjucks";
 import { connectDB, closeDB } from "./models/db";
-import router from "./routes/APIRoutes";
+import APIRouter from "./routes/APIRoutes";
+import router from "./routes/websiteRoutes";
 
 const app = express();
 const port = process.env.PORT;
@@ -12,8 +13,6 @@ nunjucks.configure("views", {
 });
 app.set("view engine", "njk");
 
-app.use("/api", router);
-
 try {
   await connectDB();
   console.log("Database successfully connected");
@@ -21,6 +20,8 @@ try {
   console.error("Failed to connect to database", error);
   process.exit(1);
 }
+app.use("/api", APIRouter);
+app.use("/", router);
 
 app.listen(port, () => {
   console.log(`Server is runnung at http://localhost:${port}`);
